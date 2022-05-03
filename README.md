@@ -16,10 +16,6 @@ Image classification is a popular application of machine learning (ML) at the he
 The Fashion-MNIST dataset was used. This dataset contains 28 x 28 grayscale images with each image representing one of ten clothing item types such as a shirt, a shoe, or a bag. The training set contains 60,000 labeled examples, while the test set contains 10,000 labeled examples. Both the training and test sets have perfectly equal distributions of each of the ten classes. The data was loaded, normalized, and shuffled using the torchvision module. As the original images contained 784 pixels with each having a value between 0 and 256, we normalized the pixel values to be between 0 and 1. For the MLP, the images were flattened from a 28*28 matrix into a vector of size 784. For training the CNN model, the image matrixes were transformed into tensors which were then sent to a GPU for parallelized computing. 
 
 
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt_text](images/image1.png "image_tooltip")
 
 
@@ -145,10 +141,6 @@ Of all the models tested, the CNN with optimized hyperparameters performed the b
 * Supplementary experiments
 
 We note that since the training and test accuracy of each model are very similar, none of the models are overfitting. A graph of training accuracy as a function of epoch is shown in Fig. 2, demonstrating the learning process of a 2-layer MLP with ReLU activation and a learning rate of 0.3. In this figure, the model steps over the minimum gradient of the loss function periodically but reaches a strong training accuracy after 200 training epochs. Given enough compute time, this issue could be rectified by using a smaller learning rate and more training epochs. Please note that, in general, we did not train the models for more than 250 epochs, as suggested by the TA, David Venuto. For reference, please see the following Ed discussion post: [https://edstem.org/us/courses/18448/discussion/1344162](https://edstem.org/us/courses/18448/discussion/1344162). 
-
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
 ![alt_text](images/image2.png "image_tooltip")
@@ -384,10 +376,6 @@ In theory, the non-linearities introduced in the models with hidden layers shoul
 We initially believed that a deeper model with non-linearities would be more expressive and thus, would be more accurate. We believe we did not get this result because deeper models require more training epochs to achieve higher testing accuracy, and so, given the equitable amount of training time we allocated to our models, the more complicated models were not trained to completion. We suspect that given more training epochs, the deeper models would be able to generalize better, as long as they do not overfit (which is possible due to their high expressiveness).
 
 
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt_text](images/image3.png "image_tooltip")
 
 
@@ -555,10 +543,6 @@ We implemented a CNN model and tuned four of its hyperparameters: learning rate,
 
 
 After tuning the CNN model, we achieve a test accuracy of 88.9%. The corresponding confusion matrix is shown in Fig. 4. When looking at the confusion matrix, we notice that most of the model's misclassifications occur between the shirt, T-shirt, and coat categories, much like the MLP. This makes sense as these items often have a similar appearance. For example, a coat has the same appearance as a shirt, but it may be larger. 
-
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
 ![alt_text](images/image4.png "image_tooltip")
